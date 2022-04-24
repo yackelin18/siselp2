@@ -5,6 +5,7 @@ import edu.elp.siselp.Service.IPersonaService;
 import edu.elp.siselp.dao.IPersonaDao;
 import edu.elp.siselp.entity.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class PersonaServiceImpl implements IPersonaService {
 
     @Override
     public Persona obtenerPersonaByDni(String dni) {
-        return null;
+        return this.personaDao.buscarPersona(dni);
     }
+
 }
