@@ -1,9 +1,6 @@
 package edu.elp.siselp.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -11,6 +8,12 @@ import java.util.Date;
 @PrimaryKeyJoinColumn(referencedColumnName = "IDpersona")
 
 public class Estudiante extends Persona {
+
+    @Id
+    @GeneratedValue(  strategy =GenerationType.IDENTITY )
+    private long idestudiante;
+
+
     @Column(name="codigo", length = 10, nullable = false)
     private String codigo;
 
@@ -66,4 +69,5 @@ public class Estudiante extends Persona {
         this.serie = serie;
         this.estadoEgreso = estadoEgreso;
     }
+
 }
